@@ -44,7 +44,7 @@ export default function ForgotPass() {
                     className="btn btn-primary w-100 mb-3"
                     style={{ boxShadow: "none" }}
                 >
-                    Envoyer un mail de réinitialisation
+                    Réinitialiser
                 </button>
 
                 <div className="text-center">

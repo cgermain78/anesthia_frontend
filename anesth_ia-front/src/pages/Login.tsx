@@ -42,19 +42,15 @@ export default function Login() {
 
                 <div className="mb-3" style={{ marginTop: "15px" }}>
                     <button
-                        className="btn btn-primary"
-                        style={{ boxShadow: "none", width: "calc(50% - 7.5px)", marginRight: "15px" }}
-                        onClick={() => navigate('/forgotpassword')}
-                    >
-                        MDP oublié
-                    </button>
-                    <button
-                        className="btn btn-primary"
-                        style={{ boxShadow: "none", width: "calc(50% - 7.5px)" }}
+                        className="btn btn-primary w-100 text-primary"
+                        style={{ boxShadow: "none", background: "none" }}
                         onClick={() => navigate('/register')}
                     >
                         Inscription
                     </button>
+                </div>
+                <div className="text-center">
+                    <a href="/forgotpassword">Mot de passe oublié</a>
                 </div>
             </div>
         </div>
