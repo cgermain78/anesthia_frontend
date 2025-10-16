@@ -16,7 +16,7 @@ export default function Dashboard() {
     // Informations du compte connecté - à remplacer par vos vraies données
     const userInfo = {
         surname: "Moreau",
-        name: "Jean",
+        name: "Eléna",
         title: "Dr.",
         hospital: "Centre Hospitalier Universitaire de Lille",
         specialty: "Anesthésiste"

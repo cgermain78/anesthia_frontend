@@ -8,8 +8,8 @@ export default function Parameters() {
         titre: 'Dr.',
         specialite: 'Anesthésiste',
         nom: 'Moreau',
-        prenom: 'Jean',
-        email: 'marie.dubois@medspot.com',
+        prenom: 'Eléna',
+        email: 'elena.moreau@medspot.com',
         ancienPassword: '',
         nouveauPassword: '',
         confirmerPassword: ''
