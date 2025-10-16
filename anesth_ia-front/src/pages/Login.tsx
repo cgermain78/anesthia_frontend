@@ -38,6 +38,7 @@ export default function Login() {
 
                 <button className="btn btn-primary w-100"
                     style={{ boxShadow: "none" }}
+                    onClick={() => navigate('/dashboard')}
                 >Se connecter</button>
 
                 <div className="mb-3" style={{ marginTop: "15px" }}>
