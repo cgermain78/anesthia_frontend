@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 interface Patient {
     id: number;
-    nom: string;
-    prenom: string;
+    surname: string;
+    name: string;
     dateNaissance: string;
     operationDate: string;
 }
@@ -15,23 +15,24 @@ export default function Dashboard() {
 
     // Informations du compte connecté - à remplacer par vos vraies données
     const userInfo = {
-        nom: "Moreau",
-        prenom: "Dr. Jean",
-        hopital: "Centre Hospitalier Universitaire de Lille",
-        specialite: "Anesthésiste"
+        surname: "Moreau",
+        name: "Jean",
+        title: "Dr.",
+        hospital: "Centre Hospitalier Universitaire de Lille",
+        specialty: "Anesthésiste"
     };
 
     // Données de test - à remplacer par vos vraies données
     const [patients] = useState<Patient[]>([
-        { id: 1, nom: "Dupont", prenom: "Jean", dateNaissance: "15/03/1980", operationDate: "12/10/2025" },
-        { id: 2, nom: "Martin", prenom: "Sophie", dateNaissance: "22/07/1992", operationDate: "10/10/2025" },
-        { id: 3, nom: "Bernard", prenom: "Pierre", dateNaissance: "05/11/1975", operationDate: "08/10/2025" },
-        { id: 4, nom: "Dubois", prenom: "Marie", dateNaissance: "18/09/1988", operationDate: "05/10/2025" },
+        { id: 1, surname: "Dupont", name: "Jean", dateNaissance: "15/03/1980", operationDate: "12/10/2025" },
+        { id: 2, surname: "Martin", name: "Sophie", dateNaissance: "22/07/1992", operationDate: "10/10/2025" },
+        { id: 3, surname: "Bernard", name: "Pierre", dateNaissance: "05/11/1975", operationDate: "08/10/2025" },
+        { id: 4, surname: "Dubois", name: "Marie", dateNaissance: "18/09/1988", operationDate: "05/10/2025" },
     ]);
 
     // Filtrer les patients selon la recherche
     const patientsFiltres = patients.filter(patient =>
-        `${patient.prenom} ${patient.nom}`.toLowerCase().includes(searchTerm.toLowerCase())
+        `${patient.name} ${patient.surname}`.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
@@ -42,7 +43,7 @@ export default function Dashboard() {
                 <button
                     className="btn btn-outline-primary"
                     style={{ boxShadow: "none" }}
-                    onClick={() => navigate('/parametres')}
+                    onClick={() => navigate('/parameters')}
                 >
                     Mes paramètres
                 </button>
@@ -55,11 +56,11 @@ export default function Dashboard() {
                         <div className="card-body d-flex align-items-center py-3">
                             <div className="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white me-3"
                                 style={{ width: "50px", height: "50px", fontSize: "20px", fontWeight: "bold" }}>
-                                {userInfo.prenom.charAt(0)}{userInfo.nom.charAt(0)}
+                                {userInfo.name.charAt(0)}{userInfo.surname.charAt(0)}
                             </div>
                             <div>
-                                <h5 className="mb-0">{userInfo.prenom} {userInfo.nom}</h5>
-                                <small className="text-muted">{userInfo.specialite} • {userInfo.hopital}</small>
+                                <h5 className="mb-0">{userInfo.title} {userInfo.name} {userInfo.surname}</h5>
+                                <small className="text-muted">{userInfo.specialty} • {userInfo.hospital}</small>
                             </div>
                         </div>
                     </div>
@@ -113,7 +114,7 @@ export default function Dashboard() {
                                     >
                                         <div className="card-body">
                                             <h5 className="card-title text-primary">
-                                                {patient.prenom} {patient.nom}
+                                                {patient.name} {patient.surname}
                                             </h5>
                                             <p className="card-text mb-1">
                                                 <small className="text-muted">

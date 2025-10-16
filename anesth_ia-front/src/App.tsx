@@ -5,6 +5,10 @@ import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import ForgotPass from "./pages/ForgotPass";
 import Dashboard from "./pages/Dashboard";
+import Parameters from "./pages/Parameters";
+import Patient from "./pages/Patient";
+import PatientParameters from "./pages/PatientParameters";
+
 
 function AppContent() {
   const location = useLocation();
@@ -19,6 +23,12 @@ function AppContent() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgotpassword" element={<ForgotPass />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/parameters" element={<Parameters />} />
+          <Route path="/patient" element={<Patient />} />
+          <Route path="/patient/:id" element={<Patient />} />
+          <Route path="/patient/:id/parameters/" element={<PatientParameters />} />
+
+
         </Routes>
       </main>
       {!hideLayout && <Footer />}
