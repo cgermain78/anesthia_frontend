@@ -55,9 +55,9 @@ export default function Parameters() {
     };
 
     return (
-        <div className="container py-4" style={{ maxWidth: "800px" }}>
+        <div className="container py-4" style={{}}>
             {/* Header */}
-            <div className="d-flex justify-content-between align-items-center mb-4">
+            <div className="d-flex justify-content-between align-items-center py-3">
                 <h2 className="text-primary mb-0">Mes paramètres</h2>
                 <button
                     className="btn btn-outline-primary"

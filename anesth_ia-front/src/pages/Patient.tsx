@@ -67,7 +67,7 @@ export default function Patient() {
         <div className="container py-4">
             {/* Bouton retour */}
             <button
-                className="btn btn-outline-primary mb-4"
+                className="btn btn-outline-primary my-3"
                 style={{ boxShadow: "none" }}
                 onClick={() => navigate('/dashboard')}
             >
@@ -143,7 +143,7 @@ export default function Patient() {
                                     key={formulaire.id}
                                     className="list-group-item list-group-item-action"
                                     style={{ cursor: "pointer" }}
-                                    onClick={() => navigate(`/formulaire/${formulaire.id}`)}
+                                    onClick={() => navigate(`/form/${formulaire.id}`)}
                                 >
                                     <div className="d-flex justify-content-between align-items-start">
                                         <div className="flex-grow-1">
@@ -175,6 +175,20 @@ export default function Patient() {
                         </div>
                     )}
                 </div>
+
+            </div>
+
+            {/* ajouter condition : si est dans les patients remplacer par supprimer de mes patients */}
+            <div className="card flex-row justify-content-center gap-3 align-items-center"
+                style={{ border: "none" }}>
+                <button
+                    className="btn btn-primary mt-3 "
+                    style={{ boxShadow: "none" }}
+                    onClick={() => navigate(`/dashboard`)}
+                >
+                    Ajouter à mes patients
+                </button>
+
             </div>
         </div>
     );

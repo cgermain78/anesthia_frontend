@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export default function PatientParameters() {
+export default function PatientCreation() {
     const navigate = useNavigate();
     const { id } = useParams();
 
     // Données initiales du patient - à remplacer par vos vraies données
     const [formData, setFormData] = useState({
-        nom: "Dupont",
-        prenom: "Jean",
-        dateNaissance: "1980-03-15", // Format HTML date input
-        email: "jean.dupont@email.com",
-        telephone: "06 12 34 56 78",
-        adresse: "12 rue de la Santé, 75014 Paris",
-        allergies: "Pénicilline, Latex",
-        groupeSanguin: "A+"
+        nom: "",
+        prenom: "",
+        dateNaissance: "",
+        email: "",
+        telephone: "",
+        adresse: "",
+        allergies: "",
+        groupeSanguin: ""
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -37,18 +37,10 @@ export default function PatientParameters() {
 
     return (
         <div className="container py-4">
-            {/* Bouton retour */}
-            <button
-                className="btn btn-outline-primary my-3"
-                style={{ boxShadow: "none" }}
-                onClick={() => navigate(`/patient/${id}`)}
-            >
-                ← Retour au dossier patient
-            </button>
 
-            <div className="card shadow-sm">
+            <div className="card shadow-sm my-3">
                 <div className="card-header bg-primary text-white">
-                    <h3 className="mb-0">Modifier les informations du patient</h3>
+                    <h3 className="mb-0">Nouveau patient</h3>
                 </div>
                 <div className="card-body">
                     <form onSubmit={handleSubmit}>
@@ -186,44 +178,26 @@ export default function PatientParameters() {
                         </div>
 
                         {/* Boutons d'action */}
-
-                        <div className="d-flex justify-content-between align-items-center gap-2 mt-4">
+                        <div className="d-flex justify-content-end gap-2 mt-4">
                             <button
-                                className="btn btn-outline-danger "
+                                type="button"
+                                className="btn btn-outline-secondary"
                                 style={{ boxShadow: "none" }}
-
-                                onClick={() => {
-                                    if (window.confirm('Êtes-vous sûr de vouloir supprimer ce patient ? Cette action est irréversible.')) {
-                                        console.log('Suppression du compte');
-                                        navigate(`/dashboard`);
-                                    }
-                                }}
+                                onClick={() => navigate(`/dashboard`)}
                             >
-                                Supprimer définitivement le patient
-
+                                Annuler
                             </button>
-                            <div className='d-flex justify-content-end gap-2' >
-                                <button
-                                    type="button"
-                                    className="btn btn-outline-secondary"
-                                    style={{ boxShadow: "none" }}
-                                    onClick={() => navigate(`/patient/${id}`)}
-                                >
-                                    Annuler
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary"
-                                    style={{ boxShadow: "none" }}
-                                >
-                                    Enregistrer les modifications
-                                </button>
-                            </div>
+                            <button
+                                type="submit"
+                                className="btn btn-primary"
+                                style={{ boxShadow: "none" }}
+                            >
+                                Enregistrer les modifications
+                            </button>
                         </div>
-
                     </form>
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }

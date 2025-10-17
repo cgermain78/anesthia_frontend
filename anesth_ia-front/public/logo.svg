@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lettre m -->
+  <text x="0" y="52" font-size="59" font-weight="bold" font-family="Arial, sans-serif" fill="#0d6efd">m</text>
+  
+  <!-- Point -->
+  <circle cx="58" cy="48" r="5" fill="#0d6efd"/>
+</svg>
